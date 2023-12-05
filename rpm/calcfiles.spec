@@ -15,15 +15,15 @@ calc_files.sh is a simple script that calculates the number of files in a direct
 
 %prep
 unzip %SOURCE0
-cd Labs_politeh-main/
+cd OS_lab-main/
 
 %install
 mkdir -p %{buildroot}/usr/bin
-install -m 755 %{_builddir}/Labs_politeh-main/calc_files.sh %{buildroot}/usr/bin/calc_files
+install -m 755 %{_builddir}/OS_lab-main/calc_files.sh %{buildroot}/usr/bin/calc_files
 
 %files
 /usr/bin/calc_files
 
 %changelog
-* Tue Nov 14 2023 Evgeniy Patlan <evgeniy.patlan@percona.com> - 1.0-1
+* Tue Dec 05 2023 Bogdan Korh <bogdan.korh.285@gmail.com> - 1.0-1
 - Initial build
