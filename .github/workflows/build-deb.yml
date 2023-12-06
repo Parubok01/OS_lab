@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: centos:7 # Use CentOS 7
+      image: ubuntu
 
     steps:
       - name: Checkout code
