@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ $( id -u ) -ne 0 ]; then
+    echo "Please run as root"
+    exit 1
+fi
+
 usage() {
     echo "Usage: $0 --check_dir=<directory>"
     exit 1
