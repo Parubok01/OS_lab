@@ -5,15 +5,17 @@ on:
     branches:
       - main
     paths:
-      - 'rpm/**.spec'
-      - '**.sh'
+      - "rpm/**.spec"
+      - "**.sh"
+
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     container:
-      image: centos:7  # Use CentOS 7
+      image: centos:7 # Use CentOS 7
 
     steps:
       - name: Checkout code
@@ -26,13 +28,13 @@ jobs:
 
       - name: Build RPM
         run: |
-          cp rpm/calc_files.spec ~/rpmbuild/SPECS/
+          cp rpm/calcfiles.spec ~/rpmbuild/SPECS/
           cd rpmbuild/SOURCES/
           wget https://github.com/Parubok01/OS_lab/archive/main.zip
           cd ../../
           rpmbuild -bs --define "dist .generic" rpmbuild/SPECS/calcfiles.spec
           rpmbuild --rebuild rpmbuild/SRPMS/calcfiles-1.0-1.generic.src.rpm
-          
+
       - name: Upload RPM
         uses: actions/upload-artifact@v2
         with:
