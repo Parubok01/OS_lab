@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "debian/**.spec"
+      - "debian"
       - "**.sh"
 
   workflow_dispatch:
@@ -24,7 +24,8 @@ jobs:
       - name: Build Debian
         run: |
           mkdir testdebian && mkdir testdebian/DEBIAN
-          mkdir -p testdebian/usr/local/bin cp calc_files.sh testdebian/usr/local/bin/
+          mkdir -p testdebian/usr/local/bin
+          cp calc_files.sh testdebian/usr/local/bin/
           cp debian/control testdebian/DEBIAN
           dpkg-deb --build testdebian
           sudo dpkg -i testdebian.deb
