@@ -1,0 +1,6 @@
+#Docker build 
+docker build -t my-jenkins-image .
+#Launch Jenkins
+docker run -it -p 8080:8080 -p 50000:50000 -v //var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home my-jenkins-image
+#User
+admin f71dac09d20d422c938494aa23a536f1
