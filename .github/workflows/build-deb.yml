@@ -28,7 +28,7 @@ jobs:
           cp calc_files.sh testdebian/usr/local/bin/
           cp debian/control testdebian/DEBIAN
           dpkg-deb --build testdebian
-          chmod +x /usr/local/bin/calc_files.sh
+          chmod +x /usr/local/bin/calc_files
 
       - name: Upload DEB
         uses: actions/upload-artifact@v2
