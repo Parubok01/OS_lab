@@ -28,7 +28,6 @@ jobs:
           cp calc_files.sh testdebian/usr/local/bin/
           cp debian/control testdebian/DEBIAN
           dpkg-deb --build testdebian
-          dpkg -i testdebian.deb
           chmod +x /usr/local/bin/calc_files.sh
 
       - name: Upload DEB
