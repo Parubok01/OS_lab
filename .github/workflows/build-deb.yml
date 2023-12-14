@@ -31,9 +31,10 @@ jobs:
           dpkg -i testdebian.deb
           chmod +x /usr/local/bin/calc_files.sh
 
-      - name: Upload Debian
+      - name: Upload DEB
         uses: actions/upload-artifact@v2
         with:
           name: deb-package
           path: |
             ~/*.deb
+
